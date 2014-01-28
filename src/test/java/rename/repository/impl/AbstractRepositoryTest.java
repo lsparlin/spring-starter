@@ -12,6 +12,6 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 @ContextConfiguration("classpath:test-persistance-config.xml")
 @TestExecutionListeners({TransactionalTestExecutionListener.class})
 @TransactionConfiguration(transactionManager = "transactionManager")
-public abstract class RepositoryTest extends AbstractJUnit4SpringContextTests {
+public abstract class AbstractRepositoryTest extends AbstractJUnit4SpringContextTests {
 
 }

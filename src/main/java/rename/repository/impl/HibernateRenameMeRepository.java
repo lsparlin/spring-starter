@@ -10,7 +10,7 @@ import rename.model.RenameMe;
 import rename.repository.RenameMeRepository;
 
 @Repository
-public class RenameMeRepositoryImpl implements RenameMeRepository {
+public class HibernateRenameMeRepository implements RenameMeRepository {
 
     @Autowired
     private SessionFactory sessionFactory;

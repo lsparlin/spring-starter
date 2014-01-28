@@ -12,7 +12,7 @@ import rename.repository.RenameMeRepository;
 
 
 @Transactional
-public class RenameMeRepositoryImplTest extends RepositoryTest {
+public class HibernateRenameMeRepositoryTest extends AbstractRepositoryTest {
 	
 	@Autowired RenameMeRepository renameMeDao;
 	
