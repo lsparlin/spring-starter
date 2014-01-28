@@ -3,11 +3,13 @@ version = '0.1'
 apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'war'
+apply plugin: 'groovy'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.6
 
 repositories {
-	mavenCentral()
+	//mavenCentral()
+    mavenRepo name: 'plugins-repo', urls: "http://apt.oreillyauto.com:8080/artifactory/main"
 }
 
 dependencies {
@@ -39,5 +41,7 @@ dependencies {
 	/* Test */
 	testCompile 'junit:junit:4.11'
 	testCompile "org.springframework:spring-test:${SPRING_VERSION}"
+    testCompile "org.codehaus.groovy:groovy-all:2.1.2"
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 	
 }
