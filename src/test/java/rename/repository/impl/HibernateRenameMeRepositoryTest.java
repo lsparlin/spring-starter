@@ -1,8 +1,9 @@
 package rename.repository.impl;
 
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,20 +11,23 @@ import org.springframework.transaction.annotation.Transactional;
 import rename.model.RenameMe;
 import rename.repository.RenameMeRepository;
 
+/*
+ * This test assumes CreateTestData.java inserted some records when the context was built
+ */
 
 @Transactional
 public class HibernateRenameMeRepositoryTest extends AbstractRepositoryTest {
 	
-	@Autowired RenameMeRepository renameMeDao;
+	@Autowired RenameMeRepository renameMeRepo;
 	
 	@Test
-	public void all_fields_are_persisted() {
-		RenameMe renameMe = new RenameMe();
-		renameMe.setName("Name1");
-		renameMeDao.save(renameMe);
-		List<RenameMe> list = renameMeDao.findAll();
-		Assert.assertEquals("Name1", list.get(0).getName());
-		renameMeDao.delete(renameMe);
+	public void testFindByName() {
+		RenameMe renameMe = renameMeRepo.findByName("Name 1");
+		assertNotNull(renameMe);
+		assertEquals(1, renameMe.getId(), 0);
+		
+		renameMe = renameMeRepo.findByName("invalid");
+		assertNull(renameMe);
 	}
 	
 }
