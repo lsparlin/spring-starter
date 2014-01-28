@@ -1,4 +1,4 @@
-package rename.dao.impl;
+package rename.repository.impl;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -12,6 +12,6 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 @ContextConfiguration("classpath:test-persistance-config.xml")
 @TestExecutionListeners({TransactionalTestExecutionListener.class})
 @TransactionConfiguration(transactionManager = "transactionManager")
-public abstract class DaoTest extends AbstractJUnit4SpringContextTests {
+public abstract class RepositoryTest extends AbstractJUnit4SpringContextTests {
 
 }

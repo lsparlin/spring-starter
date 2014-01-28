@@ -1,10 +1,10 @@
-package rename.dao;
+package rename.repository;
 
 import java.util.List;
 
 import rename.model.RenameMe;
 
-public interface RenameMeDao {
+public interface RenameMeRepository {
 
     RenameMe get(Long id);
 

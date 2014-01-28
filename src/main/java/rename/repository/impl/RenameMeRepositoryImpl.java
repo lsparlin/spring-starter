@@ -1,4 +1,4 @@
-package rename.dao.impl;
+package rename.repository.impl;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import rename.dao.RenameMeDao;
 import rename.model.RenameMe;
+import rename.repository.RenameMeRepository;
 
 @Repository
-public class RenameMeDaoImpl implements RenameMeDao {
+public class RenameMeRepositoryImpl implements RenameMeRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
