@@ -46,5 +46,12 @@
 	</bean>
 	
 	<bean id="namingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy" />
+	
+	<!-- Create some data  -->
+	<bean id="createTestData" class="rename.repository.CreateTestData">
+		<constructor-arg>
+			<ref bean="mySessionFactory" />
+		</constructor-arg>
+	</bean>
 
 </beans>
