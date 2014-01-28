@@ -1,0 +1,44 @@
+version = '0.1'
+
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/* JDBC Driver */
+	compile 'mysql:mysql-connector-java:5.1.28'
+
+	/* Hibernate */
+	compile 'org.hibernate:hibernate-core:4.1.9.Final'
+	compile 'org.hibernate:hibernate-validator:4.2.0.Final'
+
+	/* Spring */
+	compile('org.springframework:spring-context:3.2.0.RELEASE') {
+		exclude group: 'commons-logging', module: 'commons-logging'
+	}
+	compile 'org.springframework:spring-orm:3.2.0.RELEASE'
+	compile 'org.springframework:spring-webmvc:3.2.0.RELEASE'
+	compile 'org.springframework.security:spring-security-core:3.1.4.RELEASE'
+	compile 'org.springframework.security:spring-security-web:3.1.4.RELEASE'
+	compile 'org.springframework.security:spring-security-config:3.1.4.RELEASE'
+	
+  	/* Logging */
+	compile 'log4j:log4j:1.2.17'
+	compile 'org.slf4j:slf4j-log4j12:1.6.1'
+
+	/* Servlet */
+	providedCompile 'javax.servlet:servlet-api:2.5'
+	providedCompile 'javax.servlet.jsp:jsp-api:2.2'
+	compile 'javax.servlet:jstl:1.2'
+	
+	/* Test */
+	testCompile 'junit:junit:4.11'
+	testCompile 'org.springframework:spring-test:3.2.0.RELEASE'
+	
+}
