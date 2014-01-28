@@ -5,11 +5,10 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'war'
 apply plugin: 'groovy'
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.7
 
 repositories {
-	//mavenCentral()
-    mavenRepo name: 'plugins-repo', urls: "http://apt.oreillyauto.com:8080/artifactory/main"
+	mavenCentral()
 }
 
 dependencies {
