@@ -16,16 +16,16 @@ public class RenameMe implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @NotEmpty
     private String name;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

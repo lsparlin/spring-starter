@@ -1,24 +1,36 @@
-package rename.repository.impl;
+package rename.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import rename.model.RenameMe;
-import rename.repository.RenameMeRepository;
-
-/*
- * This test assumes CreateTestData.java inserted some records when the context was built
- */
 
 @Transactional
-public class HibernateRenameMeRepositoryTest extends AbstractRepositoryTest {
+public class RenameMeRepositoryTest extends AbstractRepositoryTest {
 	
 	@Autowired RenameMeRepository renameMeRepo;
+	
+	@Test
+	public void testFindOne() {
+	    RenameMe renameMe = renameMeRepo.findOne(2);
+	    assertNotNull(renameMe);
+	    assertEquals(2, renameMe.getId());
+	    assertEquals("Name 2", renameMe.getName());
+	}
+	
+	@Test
+	public void testFindAll() {
+	    List<RenameMe> list = renameMeRepo.findAll();
+	    assertEquals(4, list.size());
+	}
 	
 	@Test
 	public void testFindByName() {
